@@ -3,25 +3,30 @@
 #include <linux/module.h>
 #include <linux/slab.h>
 
-static VALUE_IN_MEMORY(stack);
+static LIST_HEAD(stack);
 
-struct stack_value{
+struct stack_value
+{
     int value;
     struct list_head stack;
-}
-
-static struct kobject *sys_stack_kobject;
+};
 
 static unsigned long count;
+static struct kobject *sys_stack_kobject;
 
-asmlinkage long sys_save(int value){
+asmlinkage long sys_save(int value)
+{
     struct stack_value *value_to_be_saved;
     
-    if(sizeof(*value_to_be_saved) == 0){     /*Se estiver rodando pela primeira vez, aloco memória*/
+    /*
+     * Se estiver rodando pela primeira vez, aloco memória
+     */
+    if(sizeof(*value_to_be_saved) == 0)
         value_to_be_saved = kmalloc(sizeof(*value_to_be_saved), GFP_KERNEL);
-    }
 
-    /*Caso contrário, deleto o valor antigo e apenas sobrescrevo o novo: old_value <= new_value*/
+    /* 
+     * Caso contrário, deleto o valor antigo e apenas sobrescrevo o novo: old_value <= new_value
+     */
     list_del(&value_to_be_saved->stack);
     value_to_be_saved->value = value;
 
@@ -31,41 +36,48 @@ asmlinkage long sys_save(int value){
     return 0;
 }
 
-asmlinkage long sys_restore(){
+asmlinkage long sys_restore(void)
+{
     int value;
     struct stack_value *saved_value;
 
-    if(list_empty(&stack)){
+    if(list_empty(&stack))
+    {
         pr_debug("EMPTY STACK");
         return -1;
     }
 
     saved_value = list_first_entry(&stack, struct stack_value, stack);
     value = saved_value->value;
-    // list_del(&saved_value->stack);
-    // kfree(saved_value);
-    count--;
 
     return value;
 }
 
+static ssize_t count_show(struct kobject *kobj, struct kobj_attribute *attr,
+			    char *buf)
+{
+	return sprintf(buf, "%lu\n", count);
+}
+
 static struct kobj_attribute count_attribute = __ATTR_RO(count);
 
-static struct attribute *attrs[]={
+static struct attribute *attrs[]=
+{
     &count_attribute.attr,
     NULL
 };
 
-static int __init sys_stack_init(){
+static int __init sys_stack_init(void)
+{
     int retval;
 
-    sys_stack_kobject = kobject_create_and_add("sys_stack", kernel_obj);
-    if(!sys_stack_kobject){
+    sys_stack_kobject = kobject_create_and_add("sys_save_restore", kernel_kobj);
+    if(!sys_stack_kobject)
         pr_debug("CAN'T CREATE KOBJECT");
-    }
 
     retval = sysfs_create_file(sys_stack_kobject, *attrs);
-    if(retval){
+    if(retval)
+    {
         pr_debug("CAN'T CREATE SYSFS");
         kobject_put(sys_stack_kobject);
         return retval;
@@ -74,7 +86,8 @@ static int __init sys_stack_init(){
     return 0;
 }
 
-static void __exit sys_stack_exit(){
+static void __exit sys_stack_exit(void)
+{
     kobject_put(sys_stack_kobject);
 }
 
