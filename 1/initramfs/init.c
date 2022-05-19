@@ -13,7 +13,7 @@
 
 #define len(_arr) ((int)((&_arr)[1] - _arr))
 
-static const char * const programs[] = { "/stack_push", "/stack_pop" };
+static const char * const programs[] = { "/save", "/restore" };
 
 void panic(const char *msg)
 {
@@ -21,21 +21,10 @@ void panic(const char *msg)
 	exit(-1);
 }
 
-void mount_fs()
-{
-	printf("Mounting filesystems\n");
-	// If /sys is not created, make it read-only (mode = 444)
-	if (mkdir("/sys", 0x124) && errno != EEXIST)
-		panic("mkdir");
-	if (mount("none", "/sys", "sysfs", 0, ""))
-		panic("mount");
-}
-
 int main()
 {
 	printf("Custom initramfs - Hello World syscall:\n");
 	hello_world();
-	mount_fs();
 
 	printf("Forking to run %d programs\n", len(programs));
 
