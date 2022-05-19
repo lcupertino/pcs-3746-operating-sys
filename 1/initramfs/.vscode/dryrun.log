@@ -1,0 +1,12 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/offreitas/Documents/git/pcs-3746-operating-sys/1/initramfs'
+gcc -Wall -Wextra -static -g    -c -o init.o init.c
+gcc -Wall -Wextra -static -g -o build/initramfs_root/init init.o
+gcc -Wall -Wextra -static -g    -c -o save.o save.c
+gcc -Wall -Wextra -static -g -o build/initramfs_root/save save.o
+gcc -Wall -Wextra -static -g    -c -o restore.o restore.c
+gcc -Wall -Wextra -static -g -o build/initramfs_root/restore restore.o
+cd build/initramfs_root ; \
+		find -type f -print0 | cpio -0 -ov -H newc | gzip -9 > ../rootfs.gz
+make: Leaving directory `/Users/offreitas/Documents/git/pcs-3746-operating-sys/1/initramfs'
+ 
