@@ -420,3 +420,4 @@
 403	common 	write_device		sys_write_device
 404 common  save            sys_save
 405 common  restore         sys_restore
+406 common  forkexecve          sys_forkexecve

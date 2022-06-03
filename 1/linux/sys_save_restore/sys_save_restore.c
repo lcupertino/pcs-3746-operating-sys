@@ -9,7 +9,6 @@ static struct kobject *sys_stack_kobject;
 
 asmlinkage long sys_save(int value)
 {
-
     saved_value = value;
 
     return 0;
@@ -22,18 +21,16 @@ asmlinkage long sys_restore(void)
 
 static int __init sys_stack_init(void)
 {
-    int retval;
-
-    sys_stack_kobject = kobject_create_and_add("sys_save_restore", kernel_kobj);
-    if(!sys_stack_kobject)
-        pr_debug("CAN'T CREATE KOBJECT");
+    printk("Initializing save and restore module...");
 
     return 0;
 }
 
 static void __exit sys_stack_exit(void)
 {
-    kobject_put(sys_stack_kobject);
+    printk("Exiting save and restore module...");
+
+    return;
 }
 
 module_init(sys_stack_init);
@@ -41,4 +38,5 @@ module_exit(sys_stack_exit);
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Lucas Rodrigues Cupertino Cardoso");
 MODULE_AUTHOR("Otavio Felipe de Freitas");
+MODULE_AUTHOR("Gabriel Kenji Godoy Shimanuki");
 MODULE_DESCRIPTION("SIMPLE SAVE AND RESTORE MODULE");
