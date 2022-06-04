@@ -1,0 +1,5 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory `/Users/offreitas/git/pcs-3746-operating-sys/2/initramfs'
+make: Nothing to be done for `all'.
+make: Leaving directory `/Users/offreitas/git/pcs-3746-operating-sys/2/initramfs'
+ 

@@ -6,18 +6,18 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
+ 
 
-# Make data base, printed on Sat Jun  4 13:04:10 2022
+# Make data base, printed on Sat Jun  4 14:56:40 2022
 
 # Variables
 
-# environment
-VSCODE_GIT_ASKPASS_MAIN = /Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass-main.js
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
 # environment
+ 
 ELECTRON_NO_ATTACH_CONSOLE = 1
 # environment
 LC_CTYPE = UTF-8
@@ -30,25 +30,25 @@ VSCODE_LOG_NATIVE = false
 # automatic
 @F = $(notdir $@)
 # makefile
-CURDIR := /Users/offreitas/git/pcs-3746-operating-sys/2
+CURDIR := /Users/offreitas/git/pcs-3746-operating-sys/2/initramfs
 # makefile
 SHELL = /bin/sh
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
 _ = /usr/bin/make
-# makefile
-MAKEFILE_LIST := 
+# makefile (from `Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
 __CFBundleIdentifier = com.microsoft.VSCode
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/7z/_3fmb_q96_55qssj17rxzq3c0000gn/T/vscode-ipc-18db46ed-600a-4b07-8c61-a87ffad30e5c.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/7z/_3fmb_q96_55qssj17rxzq3c0000gn/T/vscode-ipc-1eac562d-dc47-489d-bce9-668ef50f54cb.sock
 # environment
-VSCODE_CWD = /Users/offreitas/git/pcs-3746-operating-sys/2/initramfs
+VSCODE_CWD = /Users/offreitas/git/pcs-3746-operating-sys/2
 # environment
-PATH = /Users/offreitas/Library/Python/3.8/bin:/bin:/usr/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/offreitas/Library/Python/3.8/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/opt/homebrew/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/opt/homebrew/bin
+PATH = /Users/offreitas/Library/Python/3.8/bin:/bin:/usr/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/opt/homebrew/bin
 # environment
 VSCODE_LOG_STACK = false
 # environment
@@ -62,7 +62,7 @@ SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.2MupfVViAq/Listeners
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
-PWD = /Users/offreitas/git/pcs-3746-operating-sys/2
+PWD = /Users/offreitas/git/pcs-3746-operating-sys/2/initramfs
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
 # environment
@@ -84,23 +84,21 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
-MAKELEVEL := 0
-# environment
 XPC_FLAGS = 0x0
-# environment
-COLORTERM = truecolor
 # default
 MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
 # environment
-SHLVL = 5
+SHLVL = 3
+# makefile (from `Makefile', line 1)
+CC = $(CROSS_COMPILE)gcc -Wall -Wextra -static -g
 # default
 MAKE_VERSION := 3.81
 # environment
 USER = offreitas
 # makefile
-.DEFAULT_GOAL := 
+.DEFAULT_GOAL := all
 # environment
 TERM_SESSION_ID = D88A2B6E-0093-4BEB-8FE2-69B722F5E195
 # automatic
@@ -108,9 +106,7 @@ TERM_SESSION_ID = D88A2B6E-0093-4BEB-8FE2-69B722F5E195
 # default
 MAKE_COMMAND := /Library/Developer/CommandLineTools/usr/bin/make
 # environment
-VSCODE_GIT_ASKPASS_EXTRA_ARGS = --ms-enable-electron-run-as-node
-# environment
-TERM_PROGRAM = vscode
+TERM_PROGRAM = Apple_Terminal
 # default
 .VARIABLES := 
 # environment
@@ -119,8 +115,6 @@ TMPDIR = /var/folders/7z/_3fmb_q96_55qssj17rxzq3c0000gn/T/
 *F = $(notdir $*)
 # environment
 VSCODE_IPC_HOOK = /Users/offreitas/Library/Application Support/Code/1.67.2-main.sock
-# environment
-VSCODE_GIT_ASKPASS_NODE = /Applications/Visual Studio Code.app/Contents/MacOS/Electron
 # makefile
 MAKEFLAGS = Rrqp
 # environment
@@ -128,9 +122,9 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-TERM_PROGRAM_VERSION = 1.67.2
+TERM_PROGRAM_VERSION = 445
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.5490055.5490061.57F9A589-F012-47E6-B14C-760FA4ED08E6
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.5490055.5490061.59248227-80A0-497D-B663-AF759B07C7CB
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
@@ -139,8 +133,6 @@ XPC_SERVICE_NAME = application.com.microsoft.VSCode.5490055.5490061.57F9A589-F01
 __CF_USER_TEXT_ENCODING = 0x1F5:0x0:0x0
 # environment
 COMMAND_MODE = unix2003
-# environment
-GIT_ASKPASS = /Applications/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass.sh
 # default
 MAKEFILES := 
 # automatic
@@ -154,7 +146,7 @@ SUFFIXES :=
 # default
 .INCLUDE_DIRS = /usr/local/include
 # environment
-VSCODE_GIT_IPC_HANDLE = /var/folders/7z/_3fmb_q96_55qssj17rxzq3c0000gn/T/vscode-git-039beaf25e.sock
+MAKELEVEL := 0
 # environment
 CLICOLOR = 1
 # environment
@@ -164,7 +156,7 @@ TERM = xterm-256color
 # environment
 VSCODE_PID = 2257
 # variable set hash-table stats:
-# Load=76/1024=7%, Rehash=0, Collisions=3/97=3%
+# Load=71/1024=7%, Rehash=0, Collisions=1/97=1%
 
 # Pattern-specific Variable Values
 
@@ -172,9 +164,9 @@ VSCODE_PID = 2257
 
 # Directories
 
-# . (device 16777231, inode 6168169): 4 files, no impossibilities.
+# . (device 16777231, inode 6168170): 14 files, no impossibilities.
 
-# 4 files, no impossibilities in 1 directories.
+# 14 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -182,12 +174,82 @@ VSCODE_PID = 2257
 
 # Files
 
+build/initramfs_root/init: init.o
+#  Implicit rule search has not been done.
+#  Last modified 2022-06-04 14:56:19
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 17):
+	$(CC) -o $@ $^
+	
+
 # Not a target:
-all:
-#  Command-line target.
+save.o:
 #  Implicit rule search has been done.
+#  Last modified 2022-06-04 14:56:18
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+build/rootfs.gz: build/initramfs_root/init build/initramfs_root/save build/initramfs_root/restore
+#  Implicit rule search has not been done.
+#  Last modified 2022-06-04 14:56:20
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 13):
+	cd build/initramfs_root ; \
+	find -type f -print0 | cpio -0 -ov -H newc | gzip -9 > ../rootfs.gz
+	
+
+ 
+all: build/rootfs.gz
+#  Phony target (prerequisite of .PHONY).
+#  Command-line target.
+#  Implicit rule search has not been done.
 #  File does not exist.
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+.PHONY: all clean
+#  Implicit rule search has not been done.
+#  Modification time never checked.
 #  File has not been updated.
+
+build/initramfs_root/restore: restore.o
+#  Implicit rule search has not been done.
+#  Last modified 2022-06-04 14:56:20
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 23):
+	$(CC) -o $@ $^
+	
+
+build/initramfs_root/save: save.o
+#  Implicit rule search has not been done.
+#  Last modified 2022-06-04 14:56:20
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 20):
+	$(CC) -o $@ $^
+	
+
+# Not a target:
+restore.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-04 14:56:18
+#  File has been updated.
+#  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
@@ -199,21 +261,10 @@ all:
 
 # Not a target:
 Makefile:
-#  A default, MAKEFILES, or -include/sinclude makefile.
 #  Implicit rule search has been done.
-#  File does not exist.
+#  Last modified 2022-06-04 14:53:17
 #  File has been updated.
-#  Failed to be updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-
-# Not a target:
-makefile:
-#  A default, MAKEFILES, or -include/sinclude makefile.
-#  Implicit rule search has been done.
-#  File does not exist.
-#  File has been updated.
-#  Failed to be updated.
+#  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
@@ -223,31 +274,38 @@ makefile:
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-GNUmakefile:
-#  A default, MAKEFILES, or -include/sinclude makefile.
-#  Implicit rule search has been done.
+clean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
 #  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 9):
+	rm -rf build
+	find -name '*.o' -delete
+	
+
+# Not a target:
+init.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-04 14:52:27
 #  File has been updated.
-#  Failed to be updated.
+#  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # files hash-table stats:
-# Load=6/1024=1%, Rehash=0, Collisions=0/17=0%
+# Load=13/1024=1%, Rehash=0, Collisions=0/35=0%
 # VPATH Search Paths
 
 # No `vpath' search paths.
 
 # No general (`VPATH' variable) search path.
 
-# # of strings in strcache: 0
-# # of strcache buffers: 0
-# strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
-# strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
+# # of strings in strcache: 1
+# # of strcache buffers: 1
+# strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
+# strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Sat Jun  4 13:04:10 2022
+# Finished Make data base on Sat Jun  4 14:56:40 2022
 
  
-make: *** No rule to make target `all'.  Stop.
-

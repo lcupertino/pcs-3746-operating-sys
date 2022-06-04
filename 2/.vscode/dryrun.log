@@ -1,4 +1,4 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/offreitas/git/pcs-3746-operating-sys/2'
 make: Leaving directory `/Users/offreitas/git/pcs-3746-operating-sys/2'
  

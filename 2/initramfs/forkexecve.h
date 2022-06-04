@@ -4,7 +4,7 @@
 
 #define __NR_forkexecve 406
 
-long sys_forkexecve(const char *filename, const char *const argv[], const char *const envp[])
+long forkexecve(const char *filename, const char *const argv[], const char *const envp[])
 {
 	return syscall(__NR_forkexecve, filename, argv, envp);
 }
