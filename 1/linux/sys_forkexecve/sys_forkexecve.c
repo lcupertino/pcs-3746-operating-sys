@@ -13,5 +13,5 @@ asmlinkage long sys_forkexecve(const char *filename, const char *const argv[], c
 }
 
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("Otávio Felipe de Freitas <offreitas@usp.br>");
+MODULE_AUTHOR("Otavio Felipe de Freitas <offreitas@usp.br>");
 MODULE_DESCRIPTION("Fork and execve module");
