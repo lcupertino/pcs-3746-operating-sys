@@ -10,12 +10,9 @@
 #define len(_arr) ((int)((&_arr)[1] - _arr))
 
 static DECLARE_WAIT_QUEUE_HEAD(wq);
-static LIST_HEAD(data_queue);
 
 char *message = NULL;
 static int wq_flag = 0;
-static int total_char = 0;
-static int char_num = 0;
 
 static ssize_t blocking_dev_read(struct file *filp, char __user *buffer,
 	size_t length, loff_t *ppos)
@@ -113,5 +110,5 @@ static void __exit blocking_dev_exit(void)
 module_init(blocking_dev_init);
 module_exit(blocking_dev_exit);
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("Tiago Koji Castro Shibata <tishi@linux.com>");
+MODULE_AUTHOR("Otavio Freitas");
 MODULE_DESCRIPTION("Blocking device sample");
