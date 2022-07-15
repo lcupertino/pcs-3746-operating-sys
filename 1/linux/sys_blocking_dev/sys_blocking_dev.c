@@ -5,66 +5,68 @@
 #include <linux/module.h>
 #include <linux/slab.h>
 #include <linux/uaccess.h>
+#include <linux/printk.h>
+
+#define len(_arr) ((int)((&_arr)[1] - _arr))
 
 static DECLARE_WAIT_QUEUE_HEAD(wq);
 static LIST_HEAD(data_queue);
 
-struct device_data {
-	struct list_head head;
-	char data;
-};
-
-static int get_data(char *c)
-{
-	struct device_data *entry;
-
-	if (list_empty(&data_queue))
-		return -1;
-
-	entry = list_first_entry(&data_queue, struct device_data, head);
-	*c = entry->data;
-	list_del(&entry->head);
-	kfree(entry);
-	return 0;
-}
-
-static long put_data(char c)
-{
-	struct device_data *entry = kmalloc(sizeof(*entry), GFP_KERNEL);
-	if (!entry) {
-		pr_debug("Device queue data allocation failed\n");
-		return -1;
-	}
-	entry->data = c;
-	list_add_tail(&entry->head, &data_queue);
-	return 0;
-}
+char *message = NULL;
+static int wq_flag = 0;
+static int total_char = 0;
+static int char_num = 0;
 
 static ssize_t blocking_dev_read(struct file *filp, char __user *buffer,
 	size_t length, loff_t *ppos)
 {
-	char c;
+	ssize_t retval = -EINVAL;
+
 	if (!length)
-		return 0;
-	if (wait_event_interruptible(wq, !get_data(&c)))
+		return retval;
+	/*
+	 * If you return -ERESTARTSYS instead,
+	 * it means that your system call is restartable
+	 */
+	if (wait_event_interruptible(wq, wq_flag != 0))
 		return -ERESTARTSYS;
+	
+	wq_flag = 0;
 
 	// simple_read_from_buffer will update the file offset and check whether
 	// it fits the available data argument (1), use copy_to_user instead.
-	return 1 - copy_to_user(buffer, &c, 1);
+	retval = 1 - copy_to_user(buffer, message, length);
+
+	return retval;
 }
 
-asmlinkage long sys_write_device(int data)
+static ssize_t blocking_dev_write(struct file *filp, const char __user *buffer,
+	size_t length, loff_t *ppos)
 {
-	int rc = put_data(data);
-	if (rc)
-		return rc;
+	ssize_t retval = -EINVAL;
+	if (!length)
+		return retval;
+
+	memset(message, 0, 5);
+	retval = copy_from_user(message, buffer, length);
+	if (retval < 0)
+		return retval;
+
+	size_t i;
+	for (i = 0; message[i]; i++);
+
+	pr_info("Received %zd characters\n", i);
+
+	wq_flag = 1;
 	wake_up_interruptible(&wq);
-	return 0;
+
+	return retval;
 }
 
+// fops = file operations
 static const struct file_operations blocking_dev_fops = {
 	.owner = THIS_MODULE,
+	.write = blocking_dev_write,
 	.read  = blocking_dev_read
 };
 
@@ -78,15 +80,34 @@ static int __init blocking_dev_init(void)
 {
 	int retval;
 
+	/*
+	 * Register the misc device
+	 * The structure passed is linked
+	 * into the kernel and may not be destroyed
+	 * until it has been unregistered.
+	 */
 	retval = misc_register(&id_misc_device);
 	if (retval)
 		pr_err("blocking_dev_dev: misc_register %d\n", retval);
+
+	message = (char *)kmalloc(5, GFP_KERNEL);
+	if (!message)
+	{
+		pr_err("Failed to allocate message in kernel memory\n");
+		return -EINVAL;
+	}
+
 	return retval;
 }
 
 static void __exit blocking_dev_exit(void)
 {
+	/*
+	 * Unregister a miscellaneous device that was previously
+	 * successfully registered with misc_register()
+	 */
 	misc_deregister(&id_misc_device);
+	kfree(message);
 }
 
 module_init(blocking_dev_init);

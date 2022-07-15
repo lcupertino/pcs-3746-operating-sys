@@ -23,7 +23,7 @@ build/initramfs_root/init: init.o
 	$(CC) -o $@ $^
 
 $(USR_BIN): build/initramfs_root/usr/bin/%: %.o
-	$(CC) -o $@ $^
+	$(CC) -o $@ $^ -lm
 
 busybox:
 	./busybox/configure.sh

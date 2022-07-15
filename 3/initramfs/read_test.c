@@ -13,10 +13,10 @@ int main()
 		return -1;
 	}
 
-	char item;
+	char item[5];
 
 	while(1) {
-		int size = read(fd, &item, 1);
+		int size = read(fd, &item, 5);
 		if (!size) {
 			printf("EOF\n");
 			return 0;
@@ -25,7 +25,7 @@ int main()
 			perror("read");
 			return -1;
 		}
-		printf("Read item: %x\n", item);
+		printf("Read item: %s\n", item);
 	}
 	return 0;
 }

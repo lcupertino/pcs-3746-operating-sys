@@ -1,0 +1,7 @@
+{
+    "makefile.extensionOutputFolder": "./.vscode",
+    "git.ignoreLimitWarning": true,
+    "files.associations": {
+        "stdlib.h": "c"
+    }
+}
