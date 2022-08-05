@@ -1,0 +1,439 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 3.81
+# Copyright (C) 2006  Free Software Foundation, Inc.
+# This is free software; see the source for copying conditions.
+# There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
+
+# This program built for i386-apple-darwin11.3.0
+ 
+
+# Make data base, printed on Thu Aug  4 17:54:48 2022
+
+# Variables
+
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
+# environment
+LC_CTYPE = UTF-8
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+ 
+# automatic
+@F = $(notdir $@)
+# makefile
+CURDIR := /Users/offreitas/git/pcs-3746-operating-sys/4
+# makefile
+SHELL = /bin/sh
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+# environment
+_ = /usr/bin/make
+# makefile (from `Makefile', line 2)
+ROOTFS := /Users/offreitas/git/pcs-3746-operating-sys/4/rootfs
+# makefile (from `../initramfs_base//usr_bin_binaries.make', line 1)
+MAKEFILE_LIST :=  Makefile ../initramfs_base/usr_bin_binaries.make ../initramfs_base/Makefile ../initramfs_base//usr_bin_binaries.make
+# environment
+__CFBundleIdentifier = com.microsoft.VSCode
+# environment
+VSCODE_CWD = /Users/offreitas/git/pcs-3746-operating-sys/4
+# environment
+PATH = /Users/offreitas/Library/Python/3.8/bin:/bin:/usr/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/opt/homebrew/bin:/usr/local/bin/chromedriver
+# makefile (from `../initramfs_base/Makefile', line 2)
+USR_BIN_FILES := tree
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# makefile (from `../initramfs_base/Makefile', line 6)
+SELF_DIR := ../initramfs_base/
+# default
+.FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
+# environment
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.2wpTgREV96/Listeners
+# automatic
+%F = $(notdir $%)
+# makefile (from `../initramfs_base/Makefile', line 32)
+BUSYBOX = $(SELF_DIR)/busybox
+# environment
+PWD = /Users/offreitas/git/pcs-3746-operating-sys/4
+# makefile (from `../initramfs_base//usr_bin_binaries.make', line 6)
+USR_BIN := /Users/offreitas/git/pcs-3746-operating-sys/4/build/initramfs_root/usr/bin/tree
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /Users/offreitas
+# default
+MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /Developer)/Makefiles
+# environment
+VSCODE_CLI = 1
+# environment
+VSCODE_CODE_CACHE_PATH = /Users/offreitas/Library/Application Support/Code/CachedData/3b889b090b5ad5793f524b5d1d39fda662b96a2a
+# environment
+LOGNAME = offreitas
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+XPC_FLAGS = 0x0
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# environment
+SHLVL = 3
+# makefile (from `../initramfs_base/Makefile', line 1)
+CC = $(CROSS_COMPILE)gcc -Wall -Wextra -Werror -static -g
+# makefile (from `Makefile', line 1)
+BUILD_DIR := /Users/offreitas/git/pcs-3746-operating-sys/4/build
+# default
+MAKE_VERSION := 3.81
+# environment
+USER = offreitas
+# makefile
+.DEFAULT_GOAL := all
+# environment
+TERM_SESSION_ID = 19E3202D-24F0-42B5-B06F-BD198589FD4A
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# default
+MAKE_COMMAND := /Library/Developer/CommandLineTools/usr/bin/make
+# environment
+TERM_PROGRAM = Apple_Terminal
+# default
+.VARIABLES := 
+# environment
+TMPDIR = /var/folders/7z/_3fmb_q96_55qssj17rxzq3c0000gn/T/
+# automatic
+*F = $(notdir $*)
+# environment
+VSCODE_IPC_HOOK = /Users/offreitas/Library/Application Support/Code/1.69.2-main.sock
+# environment
+MallocNanoZone = 0
+# makefile
+MAKEFLAGS = Rrqp
+# environment
+MFLAGS = -Rrqp
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+TERM_PROGRAM_VERSION = 445
+# environment
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.11742373.11742379.9F64F391-23A3-40F4-B35C-060F3293F39E
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# automatic
++F = $(notdir $+)
+# environment
+__CF_USER_TEXT_ENCODING = 0x1F5:0x0:0x0
+# environment
+COMMAND_MODE = unix2003
+# default
+MAKEFILES := 
+# automatic
+<F = $(notdir $<)
+# environment
+LC_ALL = C
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# default
+.INCLUDE_DIRS = /usr/local/include
+# environment
+MAKELEVEL := 0
+# environment
+CLICOLOR = 1
+# environment
+LANG = C
+# environment
+TERM = xterm-256color
+# environment
+VSCODE_PID = 2029
+# variable set hash-table stats:
+# Load=73/1024=7%, Rehash=0, Collisions=11/151=7%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 16777233, inode 6170484): 10 files, no impossibilities.
+
+# 10 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+# Not a target:
+../initramfs_base//src/tree.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-16 12:41:22
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+/Users/offreitas/git/pcs-3746-operating-sys/4/build/initramfs_root/large: ../initramfs_base//src/large.o
+#  Implicit rule search has not been done.
+#  Last modified 2022-08-04 15:02:35
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `../initramfs_base/Makefile', line 30):
+	$(CC) -o $@ $^
+	
+
+all: /Users/offreitas/git/pcs-3746-operating-sys/4/build/rootfs.gz
+#  Phony target (prerequisite of .PHONY).
+#  Command-line target.
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/11=0%
+
+.PHONY: all clean busybox build_auxiliary_disk build_swap
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+/Users/offreitas/git/pcs-3746-operating-sys/4/build/initramfs_root/init: ../initramfs_base//src/init.o
+#  Implicit rule search has not been done.
+#  Last modified 2022-08-03 23:25:04
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `../initramfs_base/Makefile', line 27):
+	$(CC) -o $@ $^
+	
+
+# Not a target:
+../initramfs_base//src/large.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-04 15:02:34
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+../initramfs_base/usr_bin_binaries.make:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-03 19:44:22
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+/Users/offreitas/git/pcs-3746-operating-sys/4/build/rootfs.gz: /Users/offreitas/git/pcs-3746-operating-sys/4/build/initramfs_root/init /Users/offreitas/git/pcs-3746-operating-sys/4/build/initramfs_root/large /Users/offreitas/git/pcs-3746-operating-sys/4/build/initramfs_root/usr/bin/tree busybox build_auxiliary_disk build_swap /Users/offreitas/git/pcs-3746-operating-sys/4/build/initramfs_root/usr/bin/capacity_page_fault /Users/offreitas/git/pcs-3746-operating-sys/4/build/initramfs_root/usr/bin/mmap_page_fault
+#  Implicit rule search has not been done.
+#  Last modified 2022-08-04 17:50:52
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/11=0%
+#  commands to execute (from `../initramfs_base/Makefile', line 23):
+	cp -ruav $(ROOTFS)/. $(BUILD_DIR)/initramfs_root/
+	cd $(BUILD_DIR)/initramfs_root ; find -print0 | cpio -0 -ov -H newc | gzip -9 > ../rootfs.gz
+	
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+ 
+# Not a target:
+src/mmap_page_fault.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-04 17:54:34
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+../initramfs_base//src/init.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-07-16 12:41:22
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+/Users/offreitas/git/pcs-3746-operating-sys/4/build/initramfs_root/usr/bin/capacity_page_fault: src/capacity_page_fault.o
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: `capacity_page_fault'
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `../initramfs_base/usr_bin_binaries.make', line 9):
+	$(CC) -o $@ $^
+	
+
+# Not a target:
+../initramfs_base//usr_bin_binaries.make:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-03 19:44:22
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+../initramfs_base/Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-03 23:22:26
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+clean::
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 9):
+	find $(SELF_DIR) -name '*.o' -delete
+	
+
+clean::
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `../initramfs_base/Makefile', line 17):
+	rm -rf $(BUILD_DIR)
+	find $(SELF_DIR) -name '*.o' -delete
+	
+
+build_auxiliary_disk:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 20):
+	if [ ! -f build/aux_disk.img ] ; then \
+	fallocate -l 128M build/aux_disk.img ; \
+	mkfs.ext2 build/aux_disk.img ; \
+	echo "Auxiliary disk image created at build/aux_disk.img" ; \
+	echo "To create a large file, mount it and run:" ; \
+	echo "dd if=/dev/urandom of=mnt/large_file bs=1M count=120" ; \
+	fi
+	
+
+# Not a target:
+src/capacity_page_fault.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build_swap:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 29):
+	if [ ! -f build/swap.img ] ; then \
+	fallocate -l 128M build/swap.img ; \
+	fi
+	
+
+busybox:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: `'
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := busybox
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := 
+# automatic
+# | := 
+# automatic
+# < := 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=2/19=11%
+#  commands to execute (from `../initramfs_base/Makefile', line 34):
+	$(BUSYBOX)/configure.sh
+	$(MAKE) -C $(BUSYBOX)/busybox
+	cp -uav $(BUSYBOX)/busybox/busybox $(BUILD_DIR)/initramfs_root/usr/bin/busybox
+	
+
+/Users/offreitas/git/pcs-3746-operating-sys/4/build/initramfs_root/usr/bin/mmap_page_fault: src/mmap_page_fault.o
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: `mmap_page_fault'
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `../initramfs_base/usr_bin_binaries.make', line 9):
+	$(CC) -o $@ $^
+	
+
+/Users/offreitas/git/pcs-3746-operating-sys/4/build/initramfs_root/usr/bin/tree: ../initramfs_base//src/tree.o
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: `tree'
+#  Last modified 2022-07-16 12:41:24
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `../initramfs_base//usr_bin_binaries.make', line 9):
+	$(CC) -o $@ $^
+	
+
+# files hash-table stats:
+# Load=23/1024=2%, Rehash=0, Collisions=2/65=3%
+# VPATH Search Paths
+
+# No `vpath' search paths.
+
+# No general (`VPATH' variable) search path.
+
+# # of strings in strcache: 4
+# # of strcache buffers: 1
+# strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
+# strcache free: total = 3979 / max = 3979 / min = 3979 / avg = 3979
+
+# Finished Make data base on Thu Aug  4 17:54:48 2022
+
+ 

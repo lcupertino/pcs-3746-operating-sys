@@ -27,5 +27,5 @@ build_auxiliary_disk:
 
 build_swap:
 	if [ ! -f build/swap.img ] ; then \
-		fallocate -l 32M build/swap.img ; \
+		fallocate -l 128M build/swap.img ; \
 	fi

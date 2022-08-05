@@ -19,11 +19,14 @@ clean::
 
 include $(SELF_DIR)/usr_bin_binaries.make
 
-$(BUILD_DIR)/rootfs.gz: $(BUILD_DIR)/initramfs_root/init $(USR_BIN) busybox
+$(BUILD_DIR)/rootfs.gz: $(BUILD_DIR)/initramfs_root/init  $(BUILD_DIR)/initramfs_root/large $(USR_BIN) busybox
 	cp -ruav $(ROOTFS)/. $(BUILD_DIR)/initramfs_root/
 	cd $(BUILD_DIR)/initramfs_root ; find -print0 | cpio -0 -ov -H newc | gzip -9 > ../rootfs.gz
 
 $(BUILD_DIR)/initramfs_root/init: $(SELF_DIR)/src/init.o
+	$(CC) -o $@ $^
+
+$(BUILD_DIR)/initramfs_root/large: $(SELF_DIR)/src/large.o
 	$(CC) -o $@ $^
 
 BUSYBOX=$(SELF_DIR)/busybox
